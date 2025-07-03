@@ -42,6 +42,6 @@ steps:
 - task: PublishPipelineArtifact@1
   displayName: 'Publish Artifact: drop'
   inputs:
-    targetPath: '$(build.artifactstagingdirectory)'
+    targetPath: '$(build.artifactstagingdirectory)/Test'
     artifactName: 'drop'
     artifactType: 'pipeline'
