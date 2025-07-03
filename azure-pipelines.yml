@@ -39,5 +39,9 @@ steps:
     SourceFolder: '$(Build.SourcesDirectory)'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-- publish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
-  artifact: Sample
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    targetPath: '$(build.artifactstagingdirectory)'
+    artifactName: 'drop'
+    artifactType: 'pipeline'
