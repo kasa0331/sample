@@ -39,9 +39,5 @@ steps:
     SourceFolder: '$(Build.SourcesDirectory)'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact'
-  inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
-    ArtifactName: '$(Parameters.ArtifactName)'
-  condition: succeededOrFailed()
+- publish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
+  artifact: Sample
